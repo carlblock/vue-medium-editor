@@ -1748,9 +1748,9 @@ loose-envify@^1.0.0:
   dependencies:
     js-tokens "^2.0.0"
 
-medium-editor@^5.22.1:
-  version "5.22.1"
-  resolved "https://registry.yarnpkg.com/medium-editor/-/medium-editor-5.22.1.tgz#feecc430b67abe48a86d2eb404c8647d51a9b939"
+medium-editor@^5.23.3:
+  version "5.23.3"
+  resolved "https://registry.yarnpkg.com/medium-editor/-/medium-editor-5.23.3.tgz#6fb638759ae2fc76c423feb056f346d9c518d3b7"
 
 memory-fs@^0.4.0, memory-fs@~0.4.1:
   version "0.4.1"
