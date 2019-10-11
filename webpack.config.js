@@ -1,38 +1,8 @@
 const webpack = require('webpack')
-// const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path')
 const PRODUCTION = process.env.NODE_ENV === 'production'
+const TerserPlugin = require('terser-webpack-plugin')
 
-// module.exports = function (options) {
-//   options = options || {}
-//   return {
-//     entry: './index',
-//     resolve: {
-//       extensions: [ '.es6', '.js' ]
-//     },
-//     output: {
-//       filename: `vueMediumEditor${ PRODUCTION ? '.min' : '' }.js`,
-//       path: path.resolve(__dirname, 'dist'),
-//       library: 'vueMediumEditor',
-//       libraryTarget: 'umd'
-//     },
-//     module: {
-//       rules: [
-//         {
-//           test: /\.js$/,
-//           exclude: /node_modules/,
-//           use: {
-//             loader: 'babel-loader',
-//             options: {
-//               presets: PRODUCTION ? ['es2015', 'babili'] : ['es2015']
-//             }
-//           }
-//         }
-//       ]
-//     },
-//     plugins: PRODUCTION ? [ new UglifyJSPlugin() ] : []
-//   }
-// }
 module.exports = {
     entry: './index',
     output: {
@@ -40,6 +10,10 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         library: 'vueMediumEditor',
         libraryTarget: 'umd'
+    },
+    optimization: {
+        minimize: (PRODUCTION),
+        minimizer: [new TerserPlugin({extractComments: false})]
     },
     module: {
         rules: [
